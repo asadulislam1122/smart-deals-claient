@@ -3,7 +3,7 @@ import Product from "../Product/Product";
 
 const LatesProducts = ({ latestProducts }) => {
   const products = use(latestProducts);
-  console.log(products);
+  // console.log(products);
 
   return (
     <div>

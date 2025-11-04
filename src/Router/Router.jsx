@@ -6,6 +6,7 @@ import Register from "../Components/Register/Register";
 import MyProducts from "../MyProducts/MyProducts";
 import MyBids from "../Components/MyBids/MyBids";
 import PrivetRoutes from "../PrivetRouts/PrivetRoutes";
+import Details from "../Components/Details/Details";
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
           </PrivetRoutes>
         ),
       },
+
       {
         path: "/bits",
         element: (
@@ -36,6 +38,12 @@ export const router = createBrowserRouter([
             <MyBids></MyBids>
           </PrivetRoutes>
         ),
+      },
+      {
+        path: "/details/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/products/${params.id}`),
+        Component: Details,
       },
     ],
   },
